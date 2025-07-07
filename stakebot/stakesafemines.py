@@ -14,7 +14,7 @@ import time
 TILES_COUNT = 25
 COMBO_FILE = "used_combos.json"
 PAID_FILE = "paid_users.json"
-TOKEN = "7949366449:AAGGx0j8WvL2ig7zMW4V01Fe1pDdwtEg9eg"
+BOT_TOKEN = os.getenv("7949366449:AAGGx0j8WvL2ig7zMW4V01Fe1pDdwtEg9eg")  # ✅ Use environment variable
 ADMIN_ID = 5628303560  # Replace with your Telegram ID
 
 # === File helpers ===
@@ -220,7 +220,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # === Bot Run ===
 if __name__ == "__main__":
-    app = ApplicationBuilder().token(TOKEN).build()
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("buy", buy))
